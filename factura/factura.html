@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Factura</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#eee;
+}
+
+.container{
+    width:800px;
+    margin:50px auto;
+}
+
+.invoice{
+    background:#1f2430;
+    color:white;
+    border-radius:5px 5px 0 0;
+    overflow:hidden;
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 30px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo{
+    width:35px;
+    height:35px;
+    border:2px solid white;
+    transform:rotate(45deg);
+}
+
+.brand-text h2{
+    margin:0;
+    font-size:18px;
+}
+
+.brand-text span{
+    font-size:10px;
+    color:#bbb;
+}
+
+.title{
+    font-size:28px;
+    font-weight:bold;
+    color:#ff4d6d;
+}
+
+.line{
+    height:4px;
+    background:#ff4d6d;
+}
+
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 30px;
+}
+
+.block{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+.block strong{
+    font-size:13px;
+    color:#ccc;
+}
+
+.small{
+    font-size:11px;
+    color:#000000;
+}
+
+.small1{
+    font-size:11px;
+    color:#ffffff;
+}
+
+.tabla{
+    background:#f7f7f7;
+}
+
+.fila{
+    display:flex;
+    padding:15px 30px;
+    align-items:center;
+}
+
+.header{
+    background:#e5e5e5;
+    font-weight:bold;
+    color:#727272;
+}
+
+.col-sl{ width:10%; }
+.col-desc{ width:40%; }
+.col-price{ width:15%; text-align:right; }
+.col-qty{ width:15%; text-align:right; }
+.col-total{ width:20%; text-align:right; }
+
+.text-muted{
+    color:#000000;
+}
+
+.line-divider{
+    height:1px;
+    background:#dcdcdc;
+    margin:0 30px;
+}
+
+.space{
+    height:50px;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    background:#f7f7f7;
+    padding:25px 30px;
+}
+
+.footer-left{
+    width:55%;
+}
+
+.footer-right{
+    width:40%;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:30px;
+}
+
+.payment, .terms{
+    margin-top:15px;
+}
+
+.totals{
+    width:100%;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    padding:5px 0;
+    font-size:14px;
+}
+
+.row.total{
+    font-weight:bold;
+    font-size:16px;
+    border-top:2px solid #000000;
+    margin-top:10px;
+    padding-top:10px;
+}
+
+.linea-pequena{
+    width:150px;
+    height:1px;
+    background:#000;
+    margin:15px 0;
+}
+
+.sign{
+    text-align:center;
+    width:100%;
+}
+
+.line-sign{
+    width:150px;
+    height:1px;
+    background:#000000;
+    margin:0 auto 5px auto;
+}
+
+.linea{
+    width:100%;
+    height:15px;
+    background:#000000;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<a href="../index.html" class="boton">Volver</a>
+
+<div class="container">
+
+    <div class="invoice">
+
+        <div class="top">
+            <div class="brand">
+                <div class="logo"></div>
+                <div class="brand-text">
+                    <h2>Brand Name</h2>
+                    <span>TAGLINE SPACE HERE</span>
+                </div>
+            </div>
+
+            <div class="title">INVOICE</div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="bottom">
+            <div class="block">
+                <strong>Invoice to:</strong>
+                <span>Dwayne Clark</span>
+                <span class="small1">24 Dummy Street Area,</span>
+                <span class="small1">Location, Lorem Ipsum, 570xx</span>
+            </div>
+
+            <div class="block">
+                <span><strong>Invoice #</strong> 52148</span>
+                <span><strong>Date:</strong> 01 / 02 / 2020</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tabla">
+ 
+        <div class="fila header">
+            <div class="col-sl">SL.</div>
+            <div class="col-desc">Item Description</div>
+            <div class="col-price">Price</div>
+            <div class="col-qty">Qty.</div>
+            <div class="col-total">Total</div>
+        </div>
+
+        
+
+        <div class="fila">
+            <div class="col-sl">1</div>
+            <div class="col-desc text-muted">Lorem ipsum Dolor</div>
+            <div class="col-price">$50.00</div>
+            <div class="col-qty">1</div>
+            <div class="col-total">$50.00</div>
+        </div>
+        <div class="line-divider"></div>
+
+        <div class="fila">
+            <div class="col-sl">2</div>
+            <div class="col-desc text-muted">Pellentesque id neque ligula</div>
+            <div class="col-price">$20.00</div>
+            <div class="col-qty">3</div>
+            <div class="col-total">$60.00</div>
+        </div>
+        <div class="line-divider"></div>
+
+        <div class="fila">
+            <div class="col-sl">3</div>
+            <div class="col-desc text-muted">Interdum et malesuada fames</div>
+            <div class="col-price">$10.00</div>
+            <div class="col-qty">2</div>
+            <div class="col-total">$20.00</div>
+        </div>
+        <div class="line-divider"></div>
+
+        <div class="fila">
+            <div class="col-sl">4</div>
+            <div class="col-desc text-muted">Vivamus volutpat faucibus</div>
+            <div class="col-price">$90.00</div>
+            <div class="col-qty">1</div>
+            <div class="col-total">$90.00</div>
+        </div>
+
+        <!-- separación final -->
+        <div class="line-divider"></div>
+        <div class="space"></div>
+        <div class="line-divider"></div>
+
+    </div>
+
+<div class="footer">
+
+    <div class="footer-left">
+        <p><strong>Thank you for your business</strong></p>
+
+        <div class="payment">
+            <p><strong>Payment info:</strong></p>
+            <p class="small">Account #: 123456789</p>
+            <p class="small">A/C Name: Lorem Ipsum</p>
+            <p class="small">Bank Details: Add your bank</p>
+        </div>
+
+        <div class="linea-pequena"></div>
+
+        <div class="terms">
+            <p><strong>Terms & Conditions</strong></p>
+            <p class="small">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent imperdiet ultrices eros, sed gravida lacus facilisis non.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-right">
+        <div class="totals">
+            <div class="row">
+                <span>Sub Total:</span>
+                <span>$220.00</span>
+            </div>
+            <div class="row">
+                <span>Tax:</span>
+                <span>0.00%</span>
+            </div>
+            <div class="row total">
+                <span>Total:</span>
+                <span>$220.00</span>
+            </div>
+        </div>
+
+        <div class="sign">
+            <div class="line-sign"></div>
+            <p class="small">Authorised Sign</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="linea"></div>
+
+</div>
+
+</body>
+</html>
