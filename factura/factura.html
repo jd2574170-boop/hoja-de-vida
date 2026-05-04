@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factura</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#eee;
+}
+
+
+.container{
+    width:100%;
+    max-width:800px;
+    margin:50px auto;
+}
+
+.invoice{
+    background:#1f2430;
+    color:white;
+    border-radius:5px 5px 0 0;
+    overflow:hidden;
+}
+
+.top{
+    padding:20px 30px;
+}
+
+.brand{
+    float:left;
+}
+
+.logo{
+    width:35px;
+    height:35px;
+    border:2px solid white;
+    transform:rotate(45deg);
+    float:left;
+    margin-right:10px;
+}
+
+.brand-text h2{
+    margin:0;
+    font-size:18px;
+}
+
+.brand-text span{
+    font-size:10px;
+    color:#bbb;
+}
+
+.title{
+    float:right;
+    font-size:28px;
+    font-weight:bold;
+    color:#ff4d6d;
+}
+
+.line{
+    height:4px;
+    background:#ff4d6d;
+    clear:both;
+}
+
+.bottom{
+    padding:20px 30px;
+}
+
+.block{
+    float:left;
+    width:50%;
+}
+
+.block-right {
+    float:right;
+    width:50%;
+    text-align:right;
+}
+
+.block strong{
+    font-size:13px;
+    color:#ccc;
+}
+
+.small{
+    font-size:11px;
+    color:#000000;
+}
+
+.small1{
+    font-size:11px;
+    color:#ffffff;
+}
+
+.tabla{
+    background:#f7f7f7;
+}
+
+.fila{
+    padding:15px 30px;
+}
+
+.header{
+    background:#e5e5e5;
+    font-weight:bold;
+    color:#727272;
+}
+
+
+.col-sl{ width:10%; float:left; }
+.col-desc{ width:40%; float:left; }
+.col-price{ width:15%; float:left; text-align:right; }
+.col-qty{ width:15%; float:left; text-align:right; }
+.col-total{ width:20%; float:left; text-align:right; }
+
+.text-muted{
+    color:#000000;
+}
+
+.line-divider{
+    height:1px;
+    background:#dcdcdc;
+    margin:0 30px;
+    clear:both;
+}
+
+.space{
+    height:50px;
+    clear:both;
+}
+
+.footer{
+    background:#f7f7f7;
+    padding:25px 30px;
+}
+
+.footer-left{
+    float:left;
+    width:55%;
+}
+
+.footer-right{
+    float:right;
+    width:40%;
+}
+
+.payment, .terms{
+    margin-top:15px;
+}
+
+.totals{
+    width:100%;
+}
+
+.row{
+    padding:5px 0;
+    font-size:14px;
+    clear:both;
+}
+
+.row.total{
+    font-weight:bold;
+    font-size:16px;
+    border-top:2px solid #000000;
+    margin-top:10px;
+    padding-top:10px;
+}
+
+.linea-pequena{
+    width:150px;
+    height:1px;
+    background:#000;
+    margin:15px 0;
+}
+
+.sign{
+    text-align:center;
+    width:150px;
+    float:right;
+}
+
+.line-sign{
+    width:150px;
+    height:1px;
+    background:#000000;
+    margin:0 auto 5px auto;
+}
+
+.linea{
+    width:100%;
+    height:15px;
+    background:#000000;
+    clear:both;
+}
+
+.clearfix{
+    clear:both;
+}
+
+/* ----RESPONSIVE---- */
+
+/* 300px a 599px */
+@media (min-width: 300px) and (max-width: 599px) {
+    .brand, .title, .block, .block-right, .footer-left, .footer-right,
+    .col-sl, .col-desc, .col-price, .col-qty, .col-total {
+        float: none;
+        width: 100%;
+        clear: both;
+        text-align: left;
+    }
+
+    .logo { float: none; margin: 0 auto 10px auto; }
+    .brand-text { text-align: center; }
+    .title { text-align: center; margin-top: 10px; }
+
+    
+    .header {
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .fila { border-bottom: 1px solid #ddd; }
+    
+    
+    .col-price::before { content: "Price: "; font-weight: bold; }
+    .col-qty::before { content: "Qty: "; font-weight: bold; }
+    .col-total::before { content: "Total: "; font-weight: bold; color: #ff4d6d; }
+}
+
+/* 600px a 799px */
+@media (min-width: 600px) and (max-width: 799px) {
+    .container { width: 90%; }
+}
+
+/* 800px en adelante */
+@media (min-width: 800px) {
+    .container { width: 800px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="../index.html" class="boton">Volver</a>
+
+<div class="container">
+
+    <div class="invoice">
+
+        <div class="top">
+            <div class="brand">
+                <div class="logo"></div>
+                <div class="brand-text">
+                    <h2>Brand Name</h2>
+                    <span>TAGLINE SPACE HERE</span>
+                </div>
+            </div>
+
+            <div class="title">INVOICE</div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="bottom">
+            <div class="block">
+                <strong>Invoice to:</strong><br>
+                <span>Dwayne Clark</span><br>
+                <span class="small1">24 Dummy Street Area,</span><br>
+                <span class="small1">Location, Lorem Ipsum, 570xx</span>
+            </div>
+
+            <div class="block-right">
+                <span><strong>Invoice #</strong> 52148</span><br>
+                <span><strong>Date:</strong> 01 / 02 / 2020</span>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+
+    <div class="tabla">
+ 
+        <div class="fila header">
+            <div class="col-sl">SL.</div>
+            <div class="col-desc">Item Description</div>
+            <div class="col-price">Price</div>
+            <div class="col-qty">Qty.</div>
+            <div class="col-total">Total</div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="fila">
+            <div class="col-sl">1</div>
+            <div class="col-desc text-muted">Lorem ipsum Dolor</div>
+            <div class="col-price">$50.00</div>
+            <div class="col-qty">1</div>
+            <div class="col-total">$50.00</div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="line-divider"></div>
+
+        <div class="fila">
+            <div class="col-sl">2</div>
+            <div class="col-desc text-muted">Pellentesque id neque ligula</div>
+            <div class="col-price">$20.00</div>
+            <div class="col-qty">3</div>
+            <div class="col-total">$60.00</div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="line-divider"></div>
+
+        <div class="fila">
+            <div class="col-sl">3</div>
+            <div class="col-desc text-muted">Interdum et malesuada fames</div>
+            <div class="col-price">$10.00</div>
+            <div class="col-qty">2</div>
+            <div class="col-total">$20.00</div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="line-divider"></div>
+
+        <div class="fila">
+            <div class="col-sl">4</div>
+            <div class="col-desc text-muted">Vivamus volutpat faucibus</div>
+            <div class="col-price">$90.00</div>
+            <div class="col-qty">1</div>
+            <div class="col-total">$90.00</div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="line-divider"></div>
+        <div class="space"></div>
+        <div class="line-divider"></div>
+
+    </div>
+
+<div class="footer">
+
+    <div class="footer-left">
+        <p><strong>Thank you for your business</strong></p>
+
+        <div class="payment">
+            <p><strong>Payment info:</strong></p>
+            <p class="small">Account #: 123456789</p>
+            <p class="small">A/C Name: Lorem Ipsum</p>
+            <p class="small">Bank Details: Add your bank</p>
+        </div>
+
+        <div class="linea-pequena"></div>
+
+        <div class="terms">
+            <p><strong>Terms & Conditions</strong></p>
+            <p class="small">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent imperdiet ultrices eros, sed gravida lacus facilisis non.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-right">
+        <div class="totals">
+            <div class="row">
+                <span style="float:left;">Sub Total:</span>
+                <span style="float:right;">$220.00</span>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row">
+                <span style="float:left;">Tax:</span>
+                <span style="float:right;">0.00%</span>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row total">
+                <span style="float:left;">Total:</span>
+                <span style="float:right;">$220.00</span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="sign">
+            <div class="line-sign"></div>
+            <p class="small">Authorised Sign</p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+
+</div>
+
+<div class="linea"></div>
+
+</div>
+
+</body>
+</html>
