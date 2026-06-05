@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0a1f44;
+            color: white;
+        }
+
+        .header {
+            background-color: #0f5ea3;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .nombre {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .seccion {
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Contenedor tradicional para agrupar las tarjetas */
+        .contenedor-proyectos {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Alineación pura con Float y alturas fijas (Sin ningún display) */
+        .proyecto {
+            background: #ffffff;
+            color: black;
+            margin: 1%;            /* Margen para separarlos */
+            padding: 20px;
+            border-radius: 10px;
+            width: 31.33%;         /* Ancho exacto para que entren 3 por fila */
+            float: left;           /* Los empuja a la izquierda uno tras otro */
+            box-sizing: border-box; 
+            text-align: center;    /* Centra las imágenes y textos */
+            min-height: 360px;     /* Altura obligatoria para que no se traben al flotar */
+        }
+
+        .proyecto img {
+            width: 100%;
+            max-width: 200px;
+            height: 140px;
+            object-fit: cover;     /* Evita que las imágenes se deformen */
+            border-radius: 10px;
+        }
+
+        .boton {
+            margin-top: 15px;
+        }
+
+        /* Enlaces (<a>) estilizados con su comportamiento nativo inline */
+        .boton a {
+            text-decoration: none;
+            background: #0f5ea3;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+        }
+
+        .boton a:hover {
+            background: #1a82db;             /* Un azul más claro e iluminado */
+        }
+
+        /* Esta clase es la que evita que el diseño se rompa abajo */
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Mi Portafolio</h1>
+    </div>
+
+    <div class="nombre">
+        <h2>José Díaz</h2>
+    </div>
+
+    <div class="seccion">
+        <h2>Proyectos</h2>
+
+        <div class="contenedor-proyectos">
+
+            <div class="proyecto">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Hoja de Vida">
+                <h3>Proyecto 1</h3>
+                <p>Hoja de vida</p>
+                <div class="boton"><a href="./hojadevida/hojadevida.html">Ver</a></div>
+            </div>
+
+            <div class="proyecto">
+                <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="Ticket de Evento">
+                <h3>Proyecto 2</h3>
+                <p>Ticket de evento</p>
+                <div class="boton"><a href="./ticket_de_evento/ticket_de_evento.html">Ver</a></div>
+            </div>
+
+            <div class="proyecto">
+                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="¿Quién soy?">
+                <h3>Proyecto 3</h3>
+                <p>¿Quién soy?</p>
+                <div class="boton"><a href="./quien_soy/quien_soy.html">Ver</a></div>
+            </div>
+
+            <div class="proyecto">
+                <img src="https://templates.invoicehome.com/modelo-factura-es-dexter-750px.png" alt="Factura">
+                <h3>Proyecto 4</h3>
+                <p>Factura</p>
+                <div class="boton"><a href="./factura/factura.html">Ver</a></div>
+            </div>
+
+            <div class="proyecto">
+                <img src="https://eu.manduka.com/cdn/shop/articles/yogday_1024x1024.jpg?v=1718901651" alt="Yoga">
+                <h3>Proyecto 5</h3>
+                <p>Yoga</p>
+                <div class="boton"><a href="./yoga/yoga.html">Ver</a></div>
+            </div>
+
+            <div class="proyecto">
+                <img src="https://blog.jdsports.es/wp-content/uploads/2024/04/MFW_AF1_MIX_016_IGP.jpg" alt="Zapatos">
+                <h3>Proyecto 6</h3>
+                <p>Zapatos</p>
+                <div class="boton"><a href="./zapatos/zapatos.html">Ver</a></div>
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+     </div> 
+    </body>
+</html>
